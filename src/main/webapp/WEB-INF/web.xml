@@ -16,12 +16,92 @@
   	<description></description>
   	<servlet-class>com.app.TestServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>TodoServlet</servlet-name>
+  	<display-name>TodoServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.app.TodoServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>AddTodoServlet</servlet-name>
+  	<display-name>AddTodoServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.app.AddTodoServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>LogoutServlet</servlet-name>
+  	<display-name>LogoutServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.app.LogoutServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>CategoryServlet</servlet-name>
+  	<display-name>CategoryServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.pizza.CategoryServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>VegServlet</servlet-name>
+  	<display-name>VegServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.pizza.VegServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>NonVegServlet</servlet-name>
+  	<display-name>NonVegServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.pizza.NonVegServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>PayTMRequestServlet</servlet-name>
+  	<display-name>PayTMRequestServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.payment.PayTMRequestServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>PDFServlet</servlet-name>
+  	<display-name>PDFServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.pdf.PDFServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>LoginServlet</servlet-name>
-  	<url-pattern>/login.do</url-pattern>
+  	<url-pattern>/login</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>TestServlet</servlet-name>
   	<url-pattern>/test</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>TodoServlet</servlet-name>
+  	<url-pattern>/todo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AddTodoServlet</servlet-name>
+  	<url-pattern>/todoAdd</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>LogoutServlet</servlet-name>
+  	<url-pattern>/logout</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CategoryServlet</servlet-name>
+  	<url-pattern>/category</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>VegServlet</servlet-name>
+  	<url-pattern>/Veg</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>NonVegServlet</servlet-name>
+  	<url-pattern>/Non-Veg</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>PayTMRequestServlet</servlet-name>
+  	<url-pattern>/pgredirect</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>PDFServlet</servlet-name>
+  	<url-pattern>/PDFServlet</url-pattern>
   </servlet-mapping>
 </web-app>

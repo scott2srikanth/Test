@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <style>
+      #map {
+        width: 100%;
+        height: 400px;
+        background-color: silver;
+      }
+    </style>
+    <script>
+    function initMap()
+    {
+      //var coordinats = {lat: 7.397638244553633, lng: 78.49073373361222};
+      navigator.geolocation.getCurrentPosition(function(a) {
+            var pos = {
+              lat: 17.3986,
+              lng: 78.4930
+            };
+            var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 10,
+              center: pos
+            });
+            var marker = new google.maps.Marker({
+              position: pos,
+              map: map
+            });
+          });
+    }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=[YOUR KEY]&callback=initMap">
+    </script>
+  </head>
+  <body>
+    <h3>My Google Maps Demo</h3>
+    <div id="map"></div>
+  </body>
+</html>

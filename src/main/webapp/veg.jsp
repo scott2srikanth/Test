@@ -28,7 +28,14 @@
  <p>${exception.message}</p>
  <div class="container">
 	<c:forEach items="${products}" var="p">
-				<a class="btn btn-primary" href="${p.type}">${p.type}</a>
+				<div class="card" style="width: 18rem;">
+ 					 <img class="card-img-top" src="..." alt="Card image cap">
+  					<div class="card-body">
+    					<h5 class="card-title">${p.name} - ${p.price}</h5>
+    					<p class="card-text">${p.description}</p>
+    					<a href="pgredirect" class="btn btn-primary">Order</a>
+  					</div>
+				</div>
 	</c:forEach>
 </div>
 

@@ -2,11 +2,16 @@ package com.app;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.app.util.DBManager;
 
 
 /**
@@ -15,23 +20,34 @@ import javax.servlet.http.HttpServletResponse;
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	Connection conn = null;
+	User user=new User();
+	LoginService service=new LoginService();
        
    @Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-			//conn=DBManager.getConnection();
-		
-		if (conn != null) {
-			response.getWriter().append("Connected to database");
-        }
-		else {
-			response.getWriter().append("Not Connected to database");
-		}
+	   request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 
    @Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
-	}
+	   String name = request.getParameter("name");
+		String password = request.getParameter("password");
+		conn = DBManager.getConnection();
+		if(service.isUserValid(name,password,conn,user))
+		{
+			request.getSession().setAttribute("user_id", user.getUser_id());
+			response.sendRedirect("todo");
+
+		}
+		else
+		{
+			request.setAttribute("error", "Invalid credientials");
+			request.getRequestDispatcher("index.jsp").forward(request, response);
+
+		}
+
+   
+   }
 
 }

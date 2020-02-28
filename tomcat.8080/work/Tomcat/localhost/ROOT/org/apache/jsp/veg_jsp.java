@@ -12,7 +12,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class veg_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent,
                  org.apache.jasper.runtime.JspSourceImports {
 
@@ -183,9 +183,9 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     try {
       _jspx_th_c_005fforEach_005f0.setPageContext(_jspx_page_context);
       _jspx_th_c_005fforEach_005f0.setParent(null);
-      // /index.jsp(30,1) name = items type = javax.el.ValueExpression reqTime = true required = false fragment = false deferredValue = true expectedTypeName = java.lang.Object deferredMethod = false methodSignature = null
-      _jspx_th_c_005fforEach_005f0.setItems(new org.apache.jasper.el.JspValueExpression("/index.jsp(30,1) '${products}'",_jsp_getExpressionFactory().createValueExpression(_jspx_page_context.getELContext(),"${products}",java.lang.Object.class)).getValue(_jspx_page_context.getELContext()));
-      // /index.jsp(30,1) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
+      // /veg.jsp(30,1) name = items type = javax.el.ValueExpression reqTime = true required = false fragment = false deferredValue = true expectedTypeName = java.lang.Object deferredMethod = false methodSignature = null
+      _jspx_th_c_005fforEach_005f0.setItems(new org.apache.jasper.el.JspValueExpression("/veg.jsp(30,1) '${products}'",_jsp_getExpressionFactory().createValueExpression(_jspx_page_context.getELContext(),"${products}",java.lang.Object.class)).getValue(_jspx_page_context.getELContext()));
+      // /veg.jsp(30,1) name = var type = java.lang.String reqTime = false required = false fragment = false deferredValue = false expectedTypeName = null deferredMethod = false methodSignature = null
       _jspx_th_c_005fforEach_005f0.setVar("p");
       int[] _jspx_push_body_count_c_005fforEach_005f0 = new int[] { 0 };
       try {
@@ -193,12 +193,22 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
         if (_jspx_eval_c_005fforEach_005f0 != javax.servlet.jsp.tagext.Tag.SKIP_BODY) {
           do {
             out.write("\n");
-            out.write("\t\t\t\t<a class=\"btn btn-primary\" href=\"");
-            out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${p.type}", java.lang.String.class, (javax.servlet.jsp.PageContext)_jspx_page_context, null));
-            out.write('"');
-            out.write('>');
-            out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${p.type}", java.lang.String.class, (javax.servlet.jsp.PageContext)_jspx_page_context, null));
-            out.write("</a>\n");
+            out.write("\t\t\t\t<div class=\"card\" style=\"width: 18rem;\">\n");
+            out.write(" \t\t\t\t\t <img class=\"card-img-top\" src=\"...\" alt=\"Card image cap\">\n");
+            out.write("  \t\t\t\t\t<div class=\"card-body\">\n");
+            out.write("    \t\t\t\t\t<h5 class=\"card-title\">");
+            out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${p.name}", java.lang.String.class, (javax.servlet.jsp.PageContext)_jspx_page_context, null));
+            out.write(' ');
+            out.write('-');
+            out.write(' ');
+            out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${p.price}", java.lang.String.class, (javax.servlet.jsp.PageContext)_jspx_page_context, null));
+            out.write("</h5>\n");
+            out.write("    \t\t\t\t\t<p class=\"card-text\">");
+            out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${p.description}", java.lang.String.class, (javax.servlet.jsp.PageContext)_jspx_page_context, null));
+            out.write("</p>\n");
+            out.write("    \t\t\t\t\t<a href=\"pgredirect\" class=\"btn btn-primary\">Order</a>\n");
+            out.write("  \t\t\t\t\t</div>\n");
+            out.write("\t\t\t\t</div>\n");
             out.write("\t");
             int evalDoAfterBody = _jspx_th_c_005fforEach_005f0.doAfterBody();
             if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
